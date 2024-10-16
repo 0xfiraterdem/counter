@@ -1,0 +1,165 @@
+{
+    "address": "HK6pq31qYDZPQAu2yYAa29njYRMngVDPDKBgEdA9NZJn",
+    "metadata": {
+      "name": "counter",
+      "version": "0.1.0",
+      "spec": "0.1.0",
+      "description": "Created with Anchor"
+    },
+    "instructions": [
+      {
+        "name": "decrease_counter",
+        "discriminator": [
+          71,
+          226,
+          79,
+          213,
+          143,
+          27,
+          86,
+          183
+        ],
+        "accounts": [
+          {
+            "name": "counter",
+            "writable": true,
+            "pda": {
+              "seeds": [
+                {
+                  "kind": "const",
+                  "value": [
+                    99,
+                    111,
+                    117,
+                    110,
+                    116,
+                    101,
+                    114
+                  ]
+                },
+                {
+                  "kind": "account",
+                  "path": "authority"
+                }
+              ]
+            }
+          },
+          {
+            "name": "authority",
+            "writable": true,
+            "signer": true
+          },
+          {
+            "name": "system_program",
+            "address": "11111111111111111111111111111111"
+          }
+        ],
+        "args": [
+          {
+            "name": "step",
+            "type": "u64"
+          }
+        ]
+      },
+      {
+        "name": "increase_counter",
+        "discriminator": [
+          169,
+          230,
+          168,
+          4,
+          38,
+          49,
+          103,
+          217
+        ],
+        "accounts": [
+          {
+            "name": "counter",
+            "writable": true,
+            "pda": {
+              "seeds": [
+                {
+                  "kind": "const",
+                  "value": [
+                    99,
+                    111,
+                    117,
+                    110,
+                    116,
+                    101,
+                    114
+                  ]
+                },
+                {
+                  "kind": "account",
+                  "path": "authority"
+                }
+              ]
+            }
+          },
+          {
+            "name": "authority",
+            "writable": true,
+            "signer": true
+          },
+          {
+            "name": "system_program",
+            "address": "11111111111111111111111111111111"
+          }
+        ],
+        "args": [
+          {
+            "name": "step",
+            "type": "u64"
+          }
+        ]
+      }
+    ],
+    "accounts": [
+      {
+        "name": "Counter",
+        "discriminator": [
+          255,
+          176,
+          4,
+          245,
+          188,
+          253,
+          124,
+          25
+        ],
+        "type": {
+          "kind": "struct",
+          "fields": [
+            {
+              "name": "authority",
+              "type": "publicKey"
+            },
+            {
+              "name": "count",
+              "type": "u64"
+            }
+          ]
+        }
+      }
+    ],
+    "types": [
+      {
+        "name": "Counter",
+        "type": {
+          "kind": "struct",
+          "fields": [
+            {
+              "name": "authority",
+              "type": "publicKey"
+            },
+            {
+              "name": "count",
+              "type": "u64"
+            }
+          ]
+        }
+      }
+    ]
+  }
